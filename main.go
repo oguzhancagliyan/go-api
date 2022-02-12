@@ -40,6 +40,7 @@ func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	fmt.Println("started")
 	db := configuration.NewDatabase()
 	configuration.RestoreDatabase(db)
 	keyValueService := services.NewKeyValueService(db)
@@ -85,7 +86,7 @@ func main() {
 
 	mux := http.NewServeMux()
 	mux.Handle("/api/", NewHandler(keyValueController))
-	err := http.ListenAndServe(":8081", mux)
+	err := http.ListenAndServe(":8080", mux)
 
 	if err != nil {
 		panic(fmt.Errorf("error on listenandService %s", err.Error()))
