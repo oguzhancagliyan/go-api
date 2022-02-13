@@ -25,6 +25,7 @@ type RestoreDataModel struct {
 func RestoreDatabase(db *Database) {
 	files, err := iOReadDir("./src/backups")
 
+	fmt.Printf("db restore started")
 	if err != nil {
 		panic(err.Error())
 	}
@@ -53,6 +54,7 @@ func RestoreDatabase(db *Database) {
 				continue
 			}
 
+			fmt.Printf("item added key : %s value : %s \n", item.Key, item.Value)
 			db.Db[item.Key] = item.Value
 		}
 	}

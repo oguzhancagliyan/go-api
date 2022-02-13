@@ -34,7 +34,7 @@ type AddKeyDto struct {
 
 type AddKeyResponseDto struct {
 	Data  *Data     `json:"data,omitempty"`
-	Error *ErrorDto `json:"error_dto,omitempty"`
+	Error *ErrorDto `json:"error,omitempty"`
 }
 
 func NewAddKeyResponseDto() *AddKeyResponseDto {
