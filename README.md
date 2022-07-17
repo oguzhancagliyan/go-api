@@ -1,6 +1,3 @@
-# Yemeksepeti Case API
-
-
 # Prerequisites
 
 Docker have to be installed
